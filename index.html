@@ -7,13 +7,36 @@
 	<title>TerraQ - Teste Leaflet</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
-
-<div id='map'></div>
+<div id='map'>
+<input type="checkbox" id="bt_menu">
+<label for="bt_menu" class="floatmenu">&#9776;</label>
+<nav class="menu">
+	<ul>
+	  <li><img id="avatar" src="https://tm.ibxk.com.br/2017/06/22/22100428046161.jpg"  alt="perfil do usuario"></li>
+	  <li><b>Nome:</b><span id="nome"> nome</span></li>
+	  <li><b>Email:</b><span id="email"> email</span></li>
+	  <li><b>Data de nascimento:</b><span id="data_nascimento"> telefone</span></li> 
+	  <li><b>Sexo:</b><span id="sexo"> Sexo</span></li> 
+	  <li><b>telefone:</b><span id="telefone"> Telefone</span></li> 
+	</ul>
+ </nav>
+<div class="drop">
+		<select id="tipo_de_mapa" onchange={updateMapa()}>
+			<option value="">Selecionar mapa</option>
+			<option value="0" >Padrão</option>
+			<option value="1">Satelite</option>
+		</select>
+</div>
+<div class="modal">
+   <div class="fechar" onclick={fechar()}>X</div>
+     <div id="piechart" style="width: 700px; height: 500px;"></div>
+</div>
+</div>
 <script src="./js/script.js"></script>
 </body>
 </html>
